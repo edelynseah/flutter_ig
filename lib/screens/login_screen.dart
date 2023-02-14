@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -18,7 +18,9 @@ class _LoginScreenState extends State<LoginScreen> {
               width: double.infinity,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
-                children: [SvgPicture.asset(assetName)],
+                children: [SvgPicture.asset('\assets\ic_instagram.svg',
+                 height: 64,),
+                 const SizedBox(height: 64,)],
               ))),
     );
   }
