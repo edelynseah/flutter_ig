@@ -1,8 +1,8 @@
+// ctrl+shift+p flutter get and pubspec assist: add dependencies
+
 import 'package:flutter/material.dart';
-import 'package:proj1/responsive/mobile_screen_layout.dart';
-import 'package:proj1/responsive/responsive_layout.dart';
-import 'package:proj1/responsive/web_screen_layout.dart';
-import 'package:proj1/screens/login_screen.dart';
+
+import 'screens/signup_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
       //   MobileScreenLayout: MobileScreenLayout(),
       //   WebScreenLayout: WebScreenLayout(),
       // ),
-      home: LoginScreen()
+      home: SignupScreen()
     );
   }
 }
