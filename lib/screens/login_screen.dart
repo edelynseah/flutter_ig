@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:proj1/responsive/mobile_screen_layout.dart';
 import 'package:proj1/widgets/text_input.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -58,18 +59,25 @@ class _LoginScreenState extends State<LoginScreen> {
                           textEditingController: _passwordController,
                           textInputType: TextInputType.visiblePassword,
                           isPass: true)),
-                   
 
                   Container(height: MediaQuery.of(context).size.height / 30),
-                  InkWell(onTap: (){},
-                    child: Ink(
-                      color:Colors.blue,
-                      width: MediaQuery.of(context).size.width / 2,
-                      height: MediaQuery.of(context).size.width / 15,
-                      child: const Center(
-                        child: Text('Log in',
-                      style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)))
-                  )),
+                  InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const MobileScreenLayout()),
+                        );
+                      },
+                      child: Ink(
+                          color: Colors.blue,
+                          width: MediaQuery.of(context).size.width / 2,
+                          height: MediaQuery.of(context).size.width / 15,
+                          child: const Center(
+                              child: Text('Log in',
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold))))),
                   Container(height: MediaQuery.of(context).size.height / 30),
                   GestureDetector(
                       child: Row(

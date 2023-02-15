@@ -7,6 +7,22 @@ class MobileScreenLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Center(child: Text('This is mobile')));
+    return Scaffold(
+        body: Center(
+            child: InkWell(
+                onTap: () {
+                  Navigator.pop(
+                    context
+                  );
+                },
+                child: Ink(
+                    color: Colors.blue,
+                    width: MediaQuery.of(context).size.width / 2,
+                    height: MediaQuery.of(context).size.width / 15,
+                    child: const Center(
+                        child: Text('Go Back',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold)))))));
   }
 }

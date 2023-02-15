@@ -1,7 +1,7 @@
 // ctrl+shift+p flutter get and pubspec assist: add dependencies
 
 import 'package:flutter/material.dart';
-
+import 'package:proj1/screens/login_screen.dart';
 import 'screens/signup_screen.dart';
 
 void main() {
@@ -27,7 +27,8 @@ class MyApp extends StatelessWidget {
       //   MobileScreenLayout: MobileScreenLayout(),
       //   WebScreenLayout: WebScreenLayout(),
       // ),
-      home: SignupScreen()
+      // ignore: prefer_const_constructors
+      home: LoginScreen()
     );
   }
 }

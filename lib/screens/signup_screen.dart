@@ -115,9 +115,9 @@ class _SignupScreenState extends State<SignupScreen> {
                                       fontWeight: FontWeight.bold))))),
                   Container(height: MediaQuery.of(context).size.height / 30),
                   GestureDetector(
-                      child: Row(
+                      child: Wrap(
                           // mainAxisAlignment is for row
-                          mainAxisAlignment: MainAxisAlignment.center,
+                          // mainAxisAlignment: MainAxisAlignment.center,
                           children: const [
                         Text('Already have an account?'),
                         SizedBox(width: 5),
