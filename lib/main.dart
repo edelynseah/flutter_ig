@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:proj1/responsive/mobile_screen_layout.dart';
 import 'package:proj1/responsive/responsive_layout.dart';
 import 'package:proj1/responsive/web_screen_layout.dart';
+import 'package:proj1/screens/login_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,10 +23,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: const ResponsiveLayout(
-        MobileScreenLayout: MobileScreenLayout(),
-        WebScreenLayout: WebScreenLayout(),
-      ),
+      // home: const ResponsiveLayout(
+      //   MobileScreenLayout: MobileScreenLayout(),
+      //   WebScreenLayout: WebScreenLayout(),
+      // ),
+      home: LoginScreen()
     );
   }
 }
