@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
       //   WebScreenLayout: WebScreenLayout(),
       // ),
       // ignore: prefer_const_constructors
-      home: SignupScreen()
+      home: LoginScreen()
     );
   }
 }

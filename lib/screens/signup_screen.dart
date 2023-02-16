@@ -4,6 +4,7 @@ import 'package:proj1/screens/login_screen.dart';
 import 'package:proj1/widgets/text_input.dart';
 
 import '../responsive/mobile_screen_layout.dart';
+import '../utils/global.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({Key? key}) : super(key: key);
@@ -52,8 +53,7 @@ class _SignupScreenState extends State<SignupScreen> {
                           const CircleAvatar(
                             radius: 64,
                             // add random image temporarily
-                            backgroundImage: NetworkImage(
-                                'https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80'),
+                            backgroundImage: img,
                           ),
                           Positioned(
                             bottom: -10,

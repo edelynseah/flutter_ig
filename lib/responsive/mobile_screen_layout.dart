@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:proj1/utils/global.dart';
 
 class MobileScreenLayout extends StatefulWidget {
   const MobileScreenLayout({Key? key}) : super(key: key);
@@ -38,29 +39,26 @@ class _MobileScreenLayoutState extends State<MobileScreenLayout> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: PageView(
+            // each children corresponds to a navigation item.
             // ignore: sort_child_properties_last
-            children: [
-              Text('home'),
-              Text('search'),
-              Text('post'),
-              Text('reels'),
-              Text('profile'),
-              Center(
-                child: InkWell(
-                    onTap: () {
-                      Navigator.pop(context);
-                    },
-                    child: Ink(
-                        color: Colors.blue,
-                        width: MediaQuery.of(context).size.width / 2,
-                        height: MediaQuery.of(context).size.width / 15,
-                        child: const Center(
-                            child: Text('Go Back',
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold))))),
-              ),
-            ],
+            children: homeScreenItems,
+
+              // Center(
+              //   child: InkWell(
+              //       onTap: () {
+              //         Navigator.pop(context);
+              //       },
+              //       child: Ink(
+              //           color: Colors.blue,
+              //           width: MediaQuery.of(context).size.width / 2,
+              //           height: MediaQuery.of(context).size.width / 15,
+              //           child: const Center(
+              //               child: Text('Go Back',
+              //                   style: TextStyle(
+              //                       color: Colors.white,
+              //                       fontWeight: FontWeight.bold))))),
+              // ),
+          
             physics: const NeverScrollableScrollPhysics(),
             controller: pageController,
             onPageChanged: onPageChanged),
