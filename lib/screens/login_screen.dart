@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:proj1/responsive/mobile_screen_layout.dart';
+import 'package:proj1/screens/signup_screen.dart';
 import 'package:proj1/widgets/text_input.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -79,17 +80,23 @@ class _LoginScreenState extends State<LoginScreen> {
                                       color: Colors.white,
                                       fontWeight: FontWeight.bold))))),
                   Container(height: MediaQuery.of(context).size.height / 30),
-                  GestureDetector(
-                      child: Row(
-                          // mainAxisAlignment is for row
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
-                        Text('Don\'t have an account?'),
-                        SizedBox(width: 5),
-                        Text('Sign up now.',
-                            style: TextStyle(fontWeight: FontWeight.bold))
-                      ]))
-                ],
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                        const Text('Don\'t have an account?'),
+                        const SizedBox(width: 5),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const SignupScreen()),
+                        );
+                          },
+                          child:
+                            const Text('Sign up now.', style: TextStyle(fontWeight: FontWeight.bold))
+                          ),
+                ]),]
               ))),
     );
   }
