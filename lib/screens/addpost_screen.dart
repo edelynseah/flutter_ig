@@ -1,15 +1,41 @@
+import 'dart:typed_data';
+
 import 'package:flutter/material.dart';
 import 'package:proj1/screens/signup_screen.dart';
 import 'package:proj1/utils/global.dart';
+import 'package:proj1/widgets/text_input.dart';
 
 class AddPostScreen extends StatefulWidget {
   const AddPostScreen({super.key});
+
+  // dialog box pop up to select where user wants to upload from
+  _selectImage(BuildContext context) async{
+    return showDialog(context: context, builder: (context){
+      return SimpleDialog(
+        title: const Text('Create a Post'),
+        children: [
+          SimpleDialogOption(
+            padding: const EdgeInsets.all(20),
+            // 
+            child: const Text('Take a photo'),
+            onPressed: () async {
+              // dismiss dialog block and then 
+              Navigator.of(context).pop();
+
+            },
+          )
+        ]);
+      
+    });
+  }
 
   @override
   State<AddPostScreen> createState() => _AddPostScreenState();
 }
 
 class _AddPostScreenState extends State<AddPostScreen> {
+  // Uint8List? _file: 
+
   @override
   Widget build(BuildContext context) {
     // return Center(
@@ -43,8 +69,34 @@ class _AddPostScreenState extends State<AddPostScreen> {
         ],
       ),
       body: Column(children: [
-        CircleAvatar(
-          backgroundImage: img,
+        Row(mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          const CircleAvatar(
+            backgroundImage: img,
+          ),
+          Container(
+            padding: const EdgeInsets.all(20),
+            width: MediaQuery.of(context).size.width-100,
+            child: const TextField(
+            decoration: InputDecoration(
+              hintText: 'Write a caption...',
+              border: InputBorder.none,
+            ),
+            // scroll view with number of lines wah
+            maxLines:3,
+            )
+          ),
+          SizedBox(height: 45,
+          width: 45,
+          child: AspectRatio (
+            aspectRatio: 1/1,
+          child: Container(decoration: const BoxDecoration(
+            image: DecorationImage(image: NetworkImage('https://images.unsplash.com/photo-1524715105103-1eb12bf063c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'),
+            fit: BoxFit.fill,
+            alignment: FractionalOffset.topCenter)))
+          )
+        )],
         )
       ],)
     );
